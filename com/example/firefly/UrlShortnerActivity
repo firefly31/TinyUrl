@@ -22,7 +22,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
-/** Main activity for generating Tiny Url */
 public class UrlShortnerActivity extends Activity {
 
 	private static String TINY_URL = "http://tinyurl.com/api-create.php?url=";
@@ -72,7 +71,7 @@ public class UrlShortnerActivity extends Activity {
 		@Override
 		protected String[] doInBackground(String... params) {
 			String input = params.length < 1 ? "" : params[0];
-			String short_url = presentInCache(input);
+			String short_url = DatabaseUtils.getUrl(getApplicationContext(), input);
 			if (short_url == null) {
 				StringBuilder builder = new StringBuilder();
 				builder.append(TINY_URL).append(input);
@@ -92,10 +91,6 @@ public class UrlShortnerActivity extends Activity {
 			intent.putExtra(INPUT_EXTRA, result[0]);
 			intent.putExtra(URL_EXTRA, result[1]);
 			startActivity(intent);
-		}
-
-		private String presentInCache(String input) {
-			return DatabaseUtils.getUrl(getApplicationContext(), input);
 		}
 
 		private String findUrl(String input) {
