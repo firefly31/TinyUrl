@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shorten Url</string>
+    <string name="action_settings">Settings</string>
+    <string name="go_button_string">Shorten!</string>
+    <string name="sample_input_text">http://google.com</string>
+    <string name="result_not_found_input_text">Result not found</string>
+    <string name="input_not_found_input_text">Input null</string>
+    <string name="input_label">Given Url :\u0020</string>
+    <string name="output_label">Short Url :\u0020</string>
+    <string name="progress_dialog_title">Loading…  </string>
+    <string name="progress_dialog_text">Fetching url…  </string>
+    
+</resources>
